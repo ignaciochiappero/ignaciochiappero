@@ -45,9 +45,8 @@
 
 <div align="center">
   <h2>🐍 My Work 🐍</h2>
-  <br>
-    
-  ![snake animation](https://github.com/ignaciochiappero/ignaciochiappero/blob/output/github-contribution-grid-snake2.svg)
+ <br>
+  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/salesp07/salesp07/output/github-contribution-grid-snake.svg" />
   
   <br/><br/><br/>
 </div>
