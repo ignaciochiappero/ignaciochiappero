@@ -14,9 +14,7 @@
 
  🌱 Learning **AWS, databases, and AI**
 
- 💬 Ask me about **full stack dev or anything [here](https://github.com/nachodev/nachodev/issues)**
-
- ⚡ Fun fact: **I love making Arduino projects!**
+⚡ Fun fact: **I love making Arduino projects!**
 
 </div>
 
