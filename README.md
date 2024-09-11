@@ -9,16 +9,17 @@
 <br/>
 
 <div align="center">
- 
- 🔭 I’m currently working on **a marketplace**
- 
- 🌱 I’m currently learning **Docker, Supabase, AWS**
 
-💬 Ask me about **Node.js, React, Firebase... or anything [here](https://github.com/salesp07/salesp07/issues)**
+ 🔭 I’m building **an educational social platform with AI**
 
-⚡ Fun fact **Game of Thrones Night's Watch cloaks are made from Ikea rugs**
+ 🌱 Learning **AWS, databases, and AI**
 
- </div>
+ 💬 Ask me about **full stack dev or anything [here](https://github.com/nachodev/nachodev/issues)**
+
+ ⚡ Fun fact: **I love making Arduino projects!**
+
+</div>
+
  
 <div align="center"> 
   <a href="mailto:ignaciogabrielchiappero@gmail.com">
