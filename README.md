@@ -10,11 +10,11 @@
 
 <div align="center">
 
- 🔭 I’m building **an educational social platform with AI**
+ 🔭 I’m building **a social network integrating artificial intelligence for healthy recipes.**
 
- 🌱 Learning **AWS, databases, and AI**
+ 🌱 Learning **AWS Machine Learning, Open Source AI libraries for ML Ops**
 
-⚡ Fun fact: **I love making Arduino projects!**
+⚡ Fun fact: **I love making Arduino experimental projects!**
 
 </div>
 
