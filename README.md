@@ -78,23 +78,6 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 
 <hr/>
 
-## GitHub stats
-
-<div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ignaciochiappero&show_icons=true&hide_border=true&title_color=F76E0A&icon_color=F76E0A&text_color=c9d1d9&bg_color=0d1117" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ignaciochiappero&layout=compact&hide_border=true&title_color=F76E0A&text_color=c9d1d9&bg_color=0d1117" />
-</div>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com/?user=ignaciochiappero&hide_border=true&stroke=F76E0A&ring=F76E0A&fire=F76E0A&currStreakLabel=F76E0A&background=0d1117&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&sideLabels=c9d1d9" />
-</div>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ignaciochiappero&theme=onedark&no-frame=true&no-bg=true&margin-w=4&column=7" />
-</div>
-
-<hr/>
-
 ## 3D contribution calendar
 
 <div align="center">
