@@ -1,4 +1,4 @@
-<h1 align="center">
+**<h1 align="center">
   <a href="https://www.nachochiapperodev.com/">
     <img src="https://readme-typing-svg.demolab.com?font=Handjet&weight=600&size=45&pause=1000&color=F76E0A&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+Nacho+Chiappero;Full+Stack+Developer;TypeScript+%C2%B7+Go+%C2%B7+Python;AI+Engineering+in+Production" alt="Nacho Chiappero" />
   </a>
@@ -94,3 +94,4 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 <div align="center">
   <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
 </div>
+**
