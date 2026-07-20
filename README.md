@@ -98,7 +98,11 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 ## 🧊 3D contribution calendar
 
 <div align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution calendar" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-green-animate.svg" />
+    <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution calendar" />
+  </picture>
 </div>
 
 <hr/>
@@ -112,5 +116,9 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 <hr/>
 
 <div align="center">
-  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
+    <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
+  </picture>
 </div>
