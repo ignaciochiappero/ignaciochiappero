@@ -86,7 +86,7 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ignaciochiappero&hide_border=true&stroke=F76E0A&ring=F76E0A&fire=F76E0A&currStreakLabel=F76E0A&background=0d1117&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&sideLabels=c9d1d9" />
+  <img src="https://streak-stats.demolab.com/?user=ignaciochiappero&hide_border=true&stroke=F76E0A&ring=F76E0A&fire=F76E0A&currStreakLabel=F76E0A&background=0d1117&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&sideLabels=c9d1d9" />
 </div>
 
 <div align="center">
