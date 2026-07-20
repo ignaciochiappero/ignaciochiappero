@@ -21,32 +21,32 @@
 
 <hr/>
 
-## 👋 About me
+## About me
 
 I'm a Full Stack Developer who builds software that has to work **and** look good — and I refuse to choose between the two. I came to code from visual arts, spent years teaching electronics, robotics and web development, and today I ship production systems for global brands at [Crombie](https://crombie.dev/).
 
-- 🔭 Currently building **Go serverless backends on Google Cloud for PUMA LATAM**
-- 🤖 Doing real **AI engineering** — agents, multi-provider LLM systems and automation running in production
-- 🧩 I care about the boring stuff that keeps systems alive: local testing environments, message queues, retries and clean documentation
-- ⚡ Fun fact: I still build experimental **Arduino** projects for fun
+- Currently building **Go serverless backends on Google Cloud for PUMA LATAM**
+- Doing real **AI engineering** — agents, multi-provider LLM systems and automation running in production
+- I care about the boring stuff that keeps systems alive: local testing environments, message queues, retries and clean documentation
+- Still building experimental **Arduino** projects for fun
 
 <hr/>
 
-## 🚀 Selected work
+## Selected work
 
-**🏷️ Teams Suite** · *Full Stack Engineer @ Crombie*
+**Teams Suite** · *Full Stack Engineer @ Crombie*
 Migrated a legacy Symfony system into a modern loyalty & training platform for fuel-station brands. **50,000+ users migrated** — and the product came out solid enough that **Shell bought it**.
 `TypeScript` · `Next.js` · `Apollo GraphQL` · `Prisma` · `AWS`
 
-**⚡ PUMA LATAM** · *Backend Engineer @ Crombie*
+**PUMA LATAM** · *Backend Engineer @ Crombie*
 Serverless backend in Go on GCP, migrating the e-commerce integration flow. Built a local emulation sandbox (Floci + Docker) so the team can test without touching production.
 `Go` · `GCP` · `Serverless` · `Docker`
 
-**📦 Milla 360** · *Tech Lead — own product*
+**Milla 360** · *Tech Lead — own product*
 Last-mile logistics platform with real-time tracking over WebSockets, live quoting and billing. Designed to cost almost nothing to run — still in production today.
 `TypeScript` · `Next.js` · `WebSockets` · `PostgreSQL`
 
-**📝 [Escriba](https://github.com/ignaciochiappero/transcriptor-texto-hector-chiappero)** · *Personal project*
+**[Escriba](https://github.com/ignaciochiappero/transcriptor-texto-hector-chiappero)** · *Personal project*
 Desktop app that transcribes hours-long court hearings to timestamped text, **100% offline** with a local Whisper model — sensitive data never leaves the machine. Packaged as a portable executable, no install required.
 `Python` · `FastAPI` · `faster-whisper` · `SQLite`
 
@@ -54,7 +54,7 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 
 <hr/>
 
-## 🛠️ Tech stack
+## Tech stack
 
 **Languages**
 
@@ -78,7 +78,7 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 
 <hr/>
 
-## 📊 GitHub stats
+## GitHub stats
 
 <div align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=ignaciochiappero&show_icons=true&hide_border=true&title_color=F76E0A&icon_color=F76E0A&text_color=c9d1d9&bg_color=0d1117" />
@@ -95,7 +95,7 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 
 <hr/>
 
-## 🧊 3D contribution calendar
+## 3D contribution calendar
 
 <div align="center">
   <picture>
@@ -107,7 +107,7 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
 
 <hr/>
 
-## 📈 Activity
+## Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ignaciochiappero&bg_color=0d1117&color=F76E0A&line=F76E0A&point=ffffff&area=true&hide_border=true" />
