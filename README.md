@@ -1,4 +1,4 @@
-**<h1 align="center">
+<h1 align="center">
   <a href="https://www.nachochiapperodev.com/">
     <img src="https://readme-typing-svg.demolab.com?font=Handjet&weight=600&size=45&pause=1000&color=F76E0A&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+Nacho+Chiappero;Full+Stack+Developer;TypeScript+%C2%B7+Go+%C2%B7+Python;AI+Engineering+in+Production" alt="Nacho Chiappero" />
   </a>
@@ -89,9 +89,28 @@ Desktop app that transcribes hours-long court hearings to timestamped text, **10
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ignaciochiappero&hide_border=true&stroke=F76E0A&ring=F76E0A&fire=F76E0A&currStreakLabel=F76E0A&background=0d1117&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e&sideLabels=c9d1d9" />
 </div>
 
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=ignaciochiappero&theme=onedark&no-frame=true&no-bg=true&margin-w=4&column=7" />
+</div>
+
+<hr/>
+
+## 🧊 3D contribution calendar
+
+<div align="center">
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution calendar" />
+</div>
+
+<hr/>
+
+## 📈 Activity
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ignaciochiappero&bg_color=0d1117&color=F76E0A&line=F76E0A&point=ffffff&area=true&hide_border=true" />
+</div>
+
 <hr/>
 
 <div align="center">
   <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
 </div>
-**

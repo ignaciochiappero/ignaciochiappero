@@ -1,0 +1,40 @@
+# GitHub Action that generates a 3D isometric contribution calendar (SVG).
+name: Generate 3D Contribution Calendar
+
+on:
+  # Run daily at 18:00 UTC
+  schedule:
+    - cron: "0 18 * * *"
+
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+  # Also run on every push to main
+  push:
+    branches:
+      - main
+
+# The action needs write access to commit the generated SVGs back to the repo
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Generate the 3D contribution SVGs in './profile-3d-contrib/'
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Commit the generated files to main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update 3D contribution calendar"
+          branch: main
+          file_pattern: profile-3d-contrib/*.svg
