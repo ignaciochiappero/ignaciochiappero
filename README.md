@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.nachochiapperodev.com/">
+    <img src="./assets/banner.jpeg" alt="Nacho Chiappero — Full Stack Developer" width="100%" />
+  </a>
+</p>
+
 <h1 align="center">
   <a href="https://www.nachochiapperodev.com/">
     <img src="https://readme-typing-svg.demolab.com?font=Handjet&weight=600&size=45&pause=1000&color=F76E0A&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+Nacho+Chiappero;Full+Stack+Developer;TypeScript+%C2%B7+Go+%C2%B7+Python;AI+Engineering+in+Production" alt="Nacho Chiappero" />
