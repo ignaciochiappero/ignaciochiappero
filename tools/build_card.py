@@ -36,9 +36,10 @@ BIRTHDATE = dt.date(1997, 3, 15)
 ADVANCE = 0.5995
 
 ART_FONT = 11.5
-# The art was rasterised on a cell roughly 0.36 as wide as it is tall; the line
-# height has to reproduce that or the portrait comes out stretched.
-ART_CELL_ASPECT = 0.36
+# asciiart.eu/image-to-ascii rasterises on a fixed cell 0.54 as wide as it is
+# tall (derived: a square source at 87 characters comes back 47 rows, 47/87).
+# The line height has to reproduce that or the portrait comes out stretched.
+ART_CELL_ASPECT = 0.54
 ART_LINE = ART_FONT * ADVANCE / ART_CELL_ASPECT
 
 PANEL_FONT = 16.0
