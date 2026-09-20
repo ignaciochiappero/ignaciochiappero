@@ -10,3 +10,8 @@
   <a href="https://www.linkedin.com/in/ignacio-chiappero-129360228/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="mailto:ignaciogabrielchiappero@gmail.com"><img src="https://img.shields.io/badge/Email-24292F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/pacman-contribution-graph-dark.svg">
+  <img alt="Pac-Man eating my contribution graph" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/pacman-contribution-graph.svg">
+</picture>
