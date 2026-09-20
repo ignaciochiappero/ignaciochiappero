@@ -55,7 +55,7 @@ THEMES = {
         "add": "#3fb950", "del": "#f85149", "dots": "#616e7f",
     },
     "light": {
-        "bg": "#ffffff", "fg": "#24292f", "art": "#57606a",
+        "bg": "#ffffff", "fg": "#24292f", "art": "#24292f",
         "key": "#bc4c00", "value": "#0550ae",
         "add": "#1a7f37", "del": "#cf222e", "dots": "#8c959f",
     },
