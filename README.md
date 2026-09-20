@@ -1,113 +1,12 @@
-<p align="center">
-  <a href="https://www.nachochiapperodev.com/">
-    <img src="./assets/banner.jpeg" alt="Nacho Chiappero — Full Stack Developer" width="100%" />
-  </a>
+<a href="https://www.nachochiapperodev.com/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/main/dark_mode.svg">
+    <img alt="Nacho Chiappero - Full Stack Developer" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/main/light_mode.svg">
+  </picture>
+</a>
+
+<p align="left">
+  <a href="https://www.nachochiapperodev.com/"><img src="https://img.shields.io/badge/Portfolio-F76E0A?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/ignacio-chiappero-129360228/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:ignaciogabrielchiappero@gmail.com"><img src="https://img.shields.io/badge/Email-24292F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
-
-<h1 align="center">
-  <a href="https://www.nachochiapperodev.com/">
-    <img src="https://readme-typing-svg.demolab.com?font=Handjet&weight=600&size=45&pause=1000&color=F76E0A&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+Nacho+Chiappero;Full+Stack+Developer;TypeScript+%C2%B7+Go+%C2%B7+Python;AI+Engineering+in+Production" alt="Nacho Chiappero" />
-  </a>
-</h1>
-
-<h3 align="center">Full Stack Developer @ Crombie · Santa Fe, Argentina</h3>
-<p align="center">Building production systems for global brands — from Go serverless backends to AI agents.</p>
-
-<div align="center">
-  <a href="mailto:ignaciogabrielchiappero@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
-  </a>
-  <a href="https://www.linkedin.com/in/ignacio-chiappero-129360228/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://www.nachochiapperodev.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" />
-  </a>
-</div>
-
-<hr/>
-
-## About me
-
-I'm a Full Stack Developer who builds software that has to work **and** look good — and I refuse to choose between the two. I came to code from visual arts, spent years teaching electronics, robotics and web development, and today I ship production systems for global brands at [Crombie](https://crombie.dev/).
-
-- Currently building **Go serverless backends on Google Cloud for PUMA LATAM**
-- Doing real **AI engineering** — agents, multi-provider LLM systems and automation running in production
-- I care about the boring stuff that keeps systems alive: local testing environments, message queues, retries and clean documentation
-- Still building experimental **Arduino** projects for fun
-
-<hr/>
-
-## Selected work
-
-**Teams Suite** · *Full Stack Engineer @ Crombie*
-Migrated a legacy Symfony system into a modern loyalty & training platform for fuel-station brands. **50,000+ users migrated** — and the product came out solid enough that **Shell bought it**.
-`TypeScript` · `Next.js` · `Apollo GraphQL` · `Prisma` · `AWS`
-
-**PUMA LATAM** · *Backend Engineer @ Crombie*
-Serverless backend in Go on GCP, migrating the e-commerce integration flow. Built a local emulation sandbox (Floci + Docker) so the team can test without touching production.
-`Go` · `GCP` · `Serverless` · `Docker`
-
-**Milla 360** · *Tech Lead — own product*
-Last-mile logistics platform with real-time tracking over WebSockets, live quoting and billing. Designed to cost almost nothing to run — still in production today.
-`TypeScript` · `Next.js` · `WebSockets` · `PostgreSQL`
-
-**[Escriba](https://github.com/ignaciochiappero/transcriptor-texto-hector-chiappero)** · *Personal project*
-Desktop app that transcribes hours-long court hearings to timestamped text, **100% offline** with a local Whisper model — sensitive data never leaves the machine. Packaged as a portable executable, no install required.
-`Python` · `FastAPI` · `faster-whisper` · `SQLite`
-
-> More projects, interactive and in depth, at **[nachochiapperodev.com](https://www.nachochiapperodev.com/)**
-
-<hr/>
-
-## Tech stack
-
-**Languages**
-
-<img src="https://skillicons.dev/icons?i=ts,js,go,python,cpp,java&theme=dark" />
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,html,css,bootstrap&theme=dark" />
-
-**Backend**
-
-<img src="https://skillicons.dev/icons?i=nodejs,nestjs,express,graphql,prisma,fastapi&theme=dark" />
-
-**Databases**
-
-<img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,sqlite&theme=dark" />
-
-**Cloud & DevOps**
-
-<img src="https://skillicons.dev/icons?i=aws,gcp,docker,terraform,vercel,git,github&theme=dark" />
-
-<hr/>
-
-## 3D contribution calendar
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-green-animate.svg" />
-    <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution calendar" />
-  </picture>
-</div>
-
-<hr/>
-
-## Activity
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ignaciochiappero&bg_color=0d1117&color=F76E0A&line=F76E0A&point=ffffff&area=true&hide_border=true" />
-</div>
-
-<hr/>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
-    <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/github-contribution-grid-snake.svg" />
-  </picture>
-</div>
