@@ -23,6 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ASCII_SRC = ROOT / "assets" / "ascii-art.txt"
+ASCII_SRC_LIGHT = ROOT / "assets" / "ascii-art-light.txt"
 STATS_SRC = ROOT / "cache" / "stats.json"
 
 BIRTHDATE = dt.date(1997, 3, 15)
@@ -35,12 +36,22 @@ BIRTHDATE = dt.date(1997, 3, 15)
 # Verified in-browser with getComputedTextLength(), not assumed.
 ADVANCE = 0.5995
 
-ART_FONT = 11.5
+# Each theme draws its own art file, and the two grids differ (60x26 vs
+# 87x47). Pinning the art COLUMN to a fixed pixel width and deriving the font
+# size from the grid keeps both cards exactly the same size, whatever art
+# either one is given.
+ART_COL_WIDTH = 414.0
+
 # asciiart.eu/image-to-ascii rasterises on a fixed cell 0.54 as wide as it is
 # tall (derived: a square source at 87 characters comes back 47 rows, 47/87).
 # The line height has to reproduce that or the portrait comes out stretched.
 ART_CELL_ASPECT = 0.54
-ART_LINE = ART_FONT * ADVANCE / ART_CELL_ASPECT
+
+
+def art_metrics(cols: int) -> tuple[float, float]:
+    """Return (font_size, line_height) that fit `cols` into ART_COL_WIDTH."""
+    font = ART_COL_WIDTH / (cols * ADVANCE)
+    return font, font * ADVANCE / ART_CELL_ASPECT
 
 PANEL_FONT = 16.0
 PANEL_LINE = 20.0
@@ -51,11 +62,13 @@ GUTTER = 18
 
 THEMES = {
     "dark": {
+        "art_src": ASCII_SRC,
         "bg": "#161b22", "fg": "#c9d1d9", "art": "#c9d1d9",
         "key": "#F76E0A", "value": "#a5d6ff",
         "add": "#3fb950", "del": "#f85149", "dots": "#616e7f",
     },
     "light": {
+        "art_src": ASCII_SRC_LIGHT,
         "bg": "#ffffff", "fg": "#24292f", "art": "#24292f",
         "key": "#bc4c00", "value": "#0550ae",
         "add": "#1a7f37", "del": "#cf222e", "dots": "#8c959f",
@@ -199,11 +212,11 @@ def load_stats() -> dict:
     return {k: f"{raw[k]:,}" if isinstance(raw.get(k), int) else blank[k] for k in blank}
 
 
-def load_art() -> list[str]:
-    lines = ASCII_SRC.read_text(encoding="utf-8").split("\n")
+def load_art(src: Path) -> list[str]:
+    lines = src.read_text(encoding="utf-8").split("\n")
     filled = [i for i, line in enumerate(lines) if line.strip()]
     if not filled:
-        raise SystemExit(f"{ASCII_SRC} has no content")
+        raise SystemExit(f"{src} has no content")
     body = [line.rstrip() for line in lines[filled[0]: filled[-1] + 1]]
     indent = min(len(l) - len(l.lstrip()) for l in body if l.strip())
     return [l[indent:] for l in body]
@@ -270,17 +283,18 @@ def build_panel(x: int) -> tuple[list[str], int]:
 
 def build(theme: str) -> str:
     c = THEMES[theme]
-    art = load_art()
+    art = load_art(c["art_src"])
     art_cols = max(len(l) for l in art)
+    art_font, art_line = art_metrics(art_cols)
 
-    panel_x = int(MARGIN + art_cols * ART_FONT * ADVANCE + GUTTER)
+    panel_x = int(MARGIN + ART_COL_WIDTH + GUTTER)
     panel_lines, panel_rows = build_panel(panel_x)
 
     width = int(panel_x + PANEL_COLS * PANEL_FONT * ADVANCE + MARGIN)
-    height = int(MARGIN + 15 + max(len(art) * ART_LINE, panel_rows * PANEL_LINE) + MARGIN)
+    height = int(MARGIN + 15 + max(len(art) * art_line, panel_rows * PANEL_LINE) + MARGIN)
 
     art_tspans = "\n".join(
-        f'<tspan x="{MARGIN}" y="{MARGIN + 12 + i * ART_LINE:g}">{esc(line)}</tspan>'
+        f'<tspan x="{MARGIN}" y="{MARGIN + 12 + i * art_line:g}">{esc(line)}</tspan>'
         for i, line in enumerate(art)
     )
 
@@ -303,7 +317,7 @@ def build(theme: str) -> str:
 text, tspan {{white-space: pre;}}
 </style>
 <rect width="{width}px" height="{height}px" fill="{c['bg']}" rx="15"/>
-<text fill="{c['art']}" font-size="{ART_FONT:g}px" class="ascii">
+<text fill="{c['art']}" font-size="{art_font:.2f}px" class="ascii">
 {art_tspans}
 </text>
 <text fill="{c['fg']}" font-size="{PANEL_FONT:g}px">
@@ -314,8 +328,11 @@ text, tspan {{white-space: pre;}}
 
 
 def main() -> None:
-    art = load_art()
-    print(f"art grid : {max(len(l) for l in art)} cols x {len(art)} lines")
+    for name, c in THEMES.items():
+        a = load_art(c["art_src"])
+        cols = max(len(l) for l in a)
+        f, ln = art_metrics(cols)
+        print(f"{name:>5} art: {cols} cols x {len(a)} lines -> {f:.2f}px / {ln:.2f}px line")
     print(f"uptime   : {uptime()}")
     print(f"stats    : {'cache/stats.json' if STATS_SRC.exists() else 'not fetched yet (placeholders)'}")
     for name in THEMES:
