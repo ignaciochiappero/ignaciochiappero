@@ -78,18 +78,23 @@ THEMES = {
 TITLE = "nacho@chiappero"
 
 INFO = [
-    ("OS", "Windows 11, Arch Linux, Android"),
+    ("OS", "Windows, Ubuntu, Android"),
     ("Uptime", None),  # filled from BIRTHDATE
-    ("Host", "Crombie - Santa Fe, Argentina"),
-    ("Kernel", "Full Stack Developer"),
-    ("IDE", "LazyVim, Tmux, Zellij, VSCode"),
+    ("Host", "Santa Fe, Argentina"),
+    ("Kernel", "Product & Software Engineer"),
+    ("IDE", "VSCode, Cursor, Orca"),
     None,
-    ("Languages.Programming", "TypeScript, Go, Python, Java"),
+    # Languages ranked by what the public repos actually contain: TypeScript
+    # 33, JavaScript 11, C++ 5, Java 5, Python 2. Go is absent from that count
+    # because the Crombie work is private, but it is the PUMA backend stack.
+    ("Languages.Programming", "TypeScript, Go, Python, C++"),
     ("Languages.Computer", "HTML, CSS, SQL, YAML, GraphQL"),
     ("Languages.Real", "Spanish, English"),
     None,
-    ("Hobbies.Software", "AI Agents, LLM Systems"),
-    ("Hobbies.Hardware", "Arduino, Electronics, Robotics"),
+    # Drawn from the portfolio's own project list rather than invented.
+    ("Focus.AI", "Agents, MCP, LLM Automation"),
+    ("Focus.Web", "Next.js, NestJS, Serverless"),
+    ("Hobbies", "Arduino, Electronics, Robotics"),
 ]
 
 CONTACT = [
