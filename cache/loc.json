@@ -1,0 +1,332 @@
+{
+  "ignaciochiappero/NexHub": {
+    "added": 28997,
+    "deleted": 8617,
+    "oid": "5d3250a36fef77cb1cb2b71c332e8534c0de82f6"
+  },
+  "ignaciochiappero/VueBlog": {
+    "added": 2732,
+    "deleted": 0,
+    "oid": "e0192c83e3cac2bba21982b3c1b14c26f5b38bec"
+  },
+  "ignaciochiappero/ai-simple-app-first-chatbot-groq-video-5": {
+    "added": 576,
+    "deleted": 0,
+    "oid": "55ffbd710ab20109a24adf3fee82dbf118a06859"
+  },
+  "ignaciochiappero/ai-simple-app-groq-video-2": {
+    "added": 802,
+    "deleted": 2,
+    "oid": "c87c577cadb0c1d0a1b7b3be22fca487a12afc51"
+  },
+  "ignaciochiappero/ai-simple-app-image-recognition-groq-video-4": {
+    "added": 888,
+    "deleted": 1,
+    "oid": "25ef88a8febe167e7b54a14b4901b5cf0e146908"
+  },
+  "ignaciochiappero/ai-simple-app-lm-studio-video-1": {
+    "added": 490,
+    "deleted": 0,
+    "oid": "ebf60c6213a64e948e2d516969c9a2eb82b846a0"
+  },
+  "ignaciochiappero/ai-simple-app-model-switch-video-3": {
+    "added": 832,
+    "deleted": 1,
+    "oid": "dd8563bbb11e51e76df33657a7ce191b84dbd0db"
+  },
+  "ignaciochiappero/aimbit": {
+    "added": 9774,
+    "deleted": 107,
+    "oid": "60ff76d28110555b043a933ae9c9f7ff24abbde1"
+  },
+  "ignaciochiappero/aimbit-forge": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "5e8ee9ee748c6aa4be765427fa30fd82a92d969f"
+  },
+  "ignaciochiappero/app-restaurante-cpp": {
+    "added": 972,
+    "deleted": 0,
+    "oid": "5807ff234988f6c0940e90e87dcdbaa409fefb15"
+  },
+  "ignaciochiappero/azura": {
+    "added": 5790,
+    "deleted": 37,
+    "oid": "77ba8f680b01d66c25345985ae6a511bae05f3fc"
+  },
+  "ignaciochiappero/bavel": {
+    "added": 14661,
+    "deleted": 1322,
+    "oid": "d08d5843d36aa2c22771a5147d41f2aede5c91a9"
+  },
+  "ignaciochiappero/blueprint-js-2.0": {
+    "added": 3203464,
+    "deleted": 66,
+    "oid": "e9259ca657a8e3b0d5fb640e050e1b3d9eec8b58"
+  },
+  "ignaciochiappero/calculadorapp-java": {
+    "added": 734,
+    "deleted": 0,
+    "oid": "231d55706f7a9dfd2e2b0f8faf8bedb96dcb85f2"
+  },
+  "ignaciochiappero/calendario-cpp": {
+    "added": 94,
+    "deleted": 0,
+    "oid": "1040afc9c4e50fb05c314ae4a63d68026156a215"
+  },
+  "ignaciochiappero/campus-escuelita": {
+    "added": 2313,
+    "deleted": 18,
+    "oid": "7e092eb866665ea4c111c0ed0493daafca8d6261"
+  },
+  "ignaciochiappero/carlos-shop-backend": {
+    "added": 20582,
+    "deleted": 475,
+    "oid": "8cfc09122e72b4834879ff20ee46de6c28bc5d98"
+  },
+  "ignaciochiappero/carlos-shop-frontend": {
+    "added": 14562,
+    "deleted": 548,
+    "oid": "4f89e928963a2ff730d733cd6b2c1a3fc0e27a04"
+  },
+  "ignaciochiappero/chatai-nachodev": {
+    "added": 7614,
+    "deleted": 336,
+    "oid": "0487bce7506256e2d5429fe1ed84e29d06d73483"
+  },
+  "ignaciochiappero/cla-co-codebase-rust": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "302160864d039a00b8a20c85c73a15d9269ded41"
+  },
+  "ignaciochiappero/cookify": {
+    "added": 9108,
+    "deleted": 1085,
+    "oid": "a99816875413b6a62531d077eced8b891273e63d"
+  },
+  "ignaciochiappero/crombi-shop": {
+    "added": 6864,
+    "deleted": 253,
+    "oid": "af85a78b6101edb6d7b9a161dbc5d40e298edad1"
+  },
+  "ignaciochiappero/crombie-shop": {
+    "added": 60144,
+    "deleted": 30464,
+    "oid": "e5199d9ba3fd48a976ef959a58a5d263ece56f8c"
+  },
+  "ignaciochiappero/crombie-talk-demo": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "f69320ef3b746a69c7bb6c227f60b71682a3302c"
+  },
+  "ignaciochiappero/crudblog-nextjs": {
+    "added": 4139,
+    "deleted": 879,
+    "oid": "f7d874f81bbf34c599f4130529d25211041d9b27"
+  },
+  "ignaciochiappero/e-commerce": {
+    "added": 66027,
+    "deleted": 373,
+    "oid": "2fd93ebb3ce3f3c398d39e623d82a22220c79150"
+  },
+  "ignaciochiappero/escriba": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "46597a68b7cb13661765eaa86dd2b1c151b99c6d"
+  },
+  "ignaciochiappero/excel-licitaciones": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "1b2985f9e179979291b90f65e12235fc2ad4cd71"
+  },
+  "ignaciochiappero/fachaporfolio1": {
+    "added": 5279,
+    "deleted": 0,
+    "oid": "dde1bc6e8f3cb8ef91d17754fe90b872501c6e04"
+  },
+  "ignaciochiappero/gentleman-slides-ai-course": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "b68cf6716a1495946c5a12e83fa86e51c0d9a121"
+  },
+  "ignaciochiappero/ignaciochiappero": {
+    "added": 2035,
+    "deleted": 1089,
+    "oid": "7adfb7b0b22106bc76623aa48ddac5767dd778d6"
+  },
+  "ignaciochiappero/jaz-3d-store-v1": {
+    "added": 656,
+    "deleted": 9255,
+    "oid": "c35db3cfa20886a153b802833798ccf7786401e1"
+  },
+  "ignaciochiappero/jazmindfinton": {
+    "added": 7259,
+    "deleted": 1010,
+    "oid": "1033308b25d45f9ac9eba4415ce549a642ca84c3"
+  },
+  "ignaciochiappero/nacho-flow": {
+    "added": 5,
+    "deleted": 3,
+    "oid": "612c59cdbd6e920dcc0a044a265216a103cea502"
+  },
+  "ignaciochiappero/nachodevlogin": {
+    "added": 11432,
+    "deleted": 1511,
+    "oid": "4680f0ba97f68c9373201ab3f7493c665c65c69e"
+  },
+  "ignaciochiappero/nachodevportfolio-astro": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "0720df56cdd37dc581a0c7f505c4887ec4602b8f"
+  },
+  "ignaciochiappero/nextjs-blog": {
+    "added": 1269,
+    "deleted": 427,
+    "oid": "bc4129379d80f29c62d5d540fe088eeab1ddfb00"
+  },
+  "ignaciochiappero/niarocketgame": {
+    "added": 6670,
+    "deleted": 118,
+    "oid": "bdac0890e9c198e665f1c8608e1c9158b97de6c6"
+  },
+  "ignaciochiappero/niashop": {
+    "added": 12800,
+    "deleted": 272,
+    "oid": "a66c10b74d9eba0809fbeff9a1ba381da8b6fd29"
+  },
+  "ignaciochiappero/npx-skills-package": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "bf641da0942b622893c3c2e996d4bd857b6aeb18"
+  },
+  "ignaciochiappero/plantilla-concesionaria": {
+    "added": 7738,
+    "deleted": 140,
+    "oid": "c6eff4a97affb44f1302e683b8e82246022a667c"
+  },
+  "ignaciochiappero/pong-java": {
+    "added": 2432,
+    "deleted": 1,
+    "oid": "baf2cdd5e6a1b0b339edd3dbf3f01694aa2e1c3c"
+  },
+  "ignaciochiappero/practicagitflow": {
+    "added": 105,
+    "deleted": 8,
+    "oid": "d908180df3bd300d65ceda4a95b5dc33b1c1e7a9"
+  },
+  "ignaciochiappero/proactivatization": {
+    "added": 13443,
+    "deleted": 536,
+    "oid": "2963c8c9a496e2fa6c477051caad451bb74ab091"
+  },
+  "ignaciochiappero/proyecto-curso-next": {
+    "added": 1858,
+    "deleted": 352,
+    "oid": "b14ad398e5b2a75192c5080cd1f54642e19dd7c4"
+  },
+  "ignaciochiappero/repoprueba": {
+    "added": 2,
+    "deleted": 1,
+    "oid": "c20362a633cd3d8adc5b274ccad5becdb6663cf6"
+  },
+  "ignaciochiappero/restaurant-management": {
+    "added": 12245,
+    "deleted": 511,
+    "oid": "853a9e99d1de16a83eccf0031afebadfa941c315"
+  },
+  "ignaciochiappero/sexta-clase-aws-cognito-crombie": {
+    "added": 22441,
+    "deleted": 0,
+    "oid": "f138a815cdf4848d096d6ad8c93b94003a596e3b"
+  },
+  "ignaciochiappero/snakegame-color-cpp": {
+    "added": 275,
+    "deleted": 0,
+    "oid": "b5d924536af75e285b7d34adb0cea57df5982096"
+  },
+  "ignaciochiappero/snakegame-java": {
+    "added": 2534,
+    "deleted": 0,
+    "oid": "f5f95c7242404fad1be80feb4b2355d1c273a026"
+  },
+  "ignaciochiappero/spaceshooter-cpp": {
+    "added": 500,
+    "deleted": 0,
+    "oid": "ae463f47db489cca679ef28058e8aae6e5621908"
+  },
+  "ignaciochiappero/spaceshooter-java": {
+    "added": 2767,
+    "deleted": 0,
+    "oid": "df19f45510bc9eea6c94b77de72713d9e52ab7c4"
+  },
+  "ignaciochiappero/task-app-nest-swagger": {
+    "added": 14334,
+    "deleted": 0,
+    "oid": "8b556309e7dc9afad6000b49b5dbb200c37f3eb1"
+  },
+  "ignaciochiappero/taskapi": {
+    "added": 9249,
+    "deleted": 4,
+    "oid": "e9297ff36d5fc4cdf85a17f1089f4858202cd422"
+  },
+  "ignaciochiappero/tasksfront": {
+    "added": 6733,
+    "deleted": 49,
+    "oid": "fac84361235792f8ff752a864ef46e82c18be623"
+  },
+  "ignaciochiappero/tateti-java": {
+    "added": 2886,
+    "deleted": 0,
+    "oid": "2df7707cf68d1ddd1ce67e0b6396d17e04414d31"
+  },
+  "ignaciochiappero/techportfolio-nachodev": {
+    "added": 26381,
+    "deleted": 0,
+    "oid": "66f82c5ae4c2f7017f23ae3103a64817113c4e34"
+  },
+  "ignaciochiappero/test-url-teams-suite": {
+    "added": 6633,
+    "deleted": 179,
+    "oid": "6f0df3476098acc71684aa8267fa0bc075e144bc"
+  },
+  "ignaciochiappero/tetrisJS": {
+    "added": 299,
+    "deleted": 0,
+    "oid": "612c46e8c76bd24d15cecd22b7de257d341b1560"
+  },
+  "ignaciochiappero/threejs-curso": {
+    "added": 17981,
+    "deleted": 174,
+    "oid": "2421118dded3f7802db3eac1b2669d829332901f"
+  },
+  "ignaciochiappero/ticket-app": {
+    "added": 77170,
+    "deleted": 5084,
+    "oid": "cc418c8651eb3dfb91f8fe5c484e422b90b33679"
+  },
+  "ignaciochiappero/torreshannoi-cpp": {
+    "added": 210,
+    "deleted": 0,
+    "oid": "ec54d05ace1232a1fad649a5f0450e4cfc64a2d1"
+  },
+  "ignaciochiappero/tp3_ISO_42001": {
+    "added": 1267,
+    "deleted": 152,
+    "oid": "b9a6337459d5b87162d9fbf5a1554b414058699f"
+  },
+  "ignaciochiappero/virtual_mouse": {
+    "added": 125,
+    "deleted": 0,
+    "oid": "d425452a3114eb09dc41306ccfecfafc78db95ee"
+  },
+  "ignaciochiappero/watchai-nachodev": {
+    "added": 8530,
+    "deleted": 312,
+    "oid": "2929991319153f80c9468d2c6e6b9be86cf2b473"
+  },
+  "ignaciochiappero/whatsapp-test-response": {
+    "added": 10673,
+    "deleted": 50,
+    "oid": "40dd59a3679476c41524cef235aebca21b45f874"
+  }
+}
