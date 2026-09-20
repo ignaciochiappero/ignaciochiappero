@@ -37,6 +37,9 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v4
+        with:
+          # Rebasing below needs a real merge base, which a shallow clone lacks.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -55,6 +58,12 @@ jobs:
 
       - name: Rebuild the card
         run: python tools/build_card.py
+
+      # Other workflows in this repo also commit to main, so main can move
+      # while this job is fetching stats. The card is a deterministic build
+      # output, so replaying it on top of whatever landed is always safe.
+      - name: Rebase onto any commits that landed meanwhile
+        run: git pull --rebase --autostash origin main
 
       - name: Commit the regenerated card
         uses: stefanzweifel/git-auto-commit-action@v5
