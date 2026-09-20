@@ -278,7 +278,19 @@ def build_panel(x: int) -> tuple[list[str], int]:
             out.append(f'<tspan x="{x}" y="{y:g}" class="cc">.</tspan>')
         else:
             out.append(row.render(x, y, PANEL_COLS))
-    return out, len(rows)
+
+    # A terminal left waiting for the next command. calcMode="discrete" is what
+    # makes it snap on and off like a real cursor instead of fading.
+    y = MARGIN + 15 + (len(rows) + 1) * PANEL_LINE
+    out.append(
+        f'<tspan x="{x}" y="{y:g}">'
+        f'<tspan class="key">&gt; </tspan>'
+        f'<tspan class="value">█'
+        f'<animate attributeName="opacity" values="1;0" dur="1.06s"'
+        f' calcMode="discrete" repeatCount="indefinite"/>'
+        f'</tspan></tspan>'
+    )
+    return out, len(rows) + 2
 
 
 def build(theme: str) -> str:
