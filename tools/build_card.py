@@ -227,8 +227,19 @@ def load_art(src: Path) -> list[str]:
     return [l[indent:] for l in body]
 
 
+# --- Vertical layout --------------------------------------------------------
+# A line's glyph box runs ~1.0em above its baseline and ~0.3em below (measured
+# in-browser with getBBox on the tspans). So its middle sits 0.35em above the
+# baseline, and a block of lines reaches 0.65em past its outer baselines on
+# both sides -- which is what lets two blocks in different font sizes centre
+# on one shared axis.
+LINE_MID = 0.35
+LINE_PAD = 0.65
+
+
 # --- Panel ------------------------------------------------------------------
-def build_panel(x: int) -> tuple[list[str], int]:
+def build_panel(x: int, y0: float) -> tuple[list[str], int]:
+    """Render the panel with its first baseline at y0; returns (lines, row count)."""
     st = load_stats()
     rows: list[Row | None] = [rule_row(TITLE, bold=True)]
 
@@ -278,7 +289,7 @@ def build_panel(x: int) -> tuple[list[str], int]:
 
     out = []
     for i, row in enumerate(rows):
-        y = MARGIN + 15 + i * PANEL_LINE
+        y = y0 + i * PANEL_LINE
         if row is None:
             out.append(f'<tspan x="{x}" y="{y:g}" class="cc">.</tspan>')
         else:
@@ -286,7 +297,7 @@ def build_panel(x: int) -> tuple[list[str], int]:
 
     # A terminal left waiting for the next command. calcMode="discrete" is what
     # makes it snap on and off like a real cursor instead of fading.
-    y = MARGIN + 15 + (len(rows) + 1) * PANEL_LINE
+    y = y0 + (len(rows) + 1) * PANEL_LINE
     out.append(
         f'<tspan x="{x}" y="{y:g}">'
         f'<tspan class="key">&gt; </tspan>'
@@ -305,13 +316,25 @@ def build(theme: str) -> str:
     art_font, art_line = art_metrics(art_cols)
 
     panel_x = int(MARGIN + ART_COL_WIDTH + GUTTER)
-    panel_lines, panel_rows = build_panel(panel_x)
+    _, panel_rows = build_panel(panel_x, 0.0)  # dry run: the layout needs the row count
+
+    # Art and panel centre on one horizontal axis, and the card is sized so that
+    # axis is its exact middle. The art used to be top-aligned, and being the
+    # shorter block it hung ~100px above centre; the panel itself sat 8px high
+    # because the top and bottom margins were never equal.
+    panel_span = (panel_rows - 1) * PANEL_LINE
+    art_span = (len(art) - 1) * art_line
+    half = max(panel_span / 2 + LINE_PAD * PANEL_FONT, art_span / 2 + LINE_PAD * art_font)
+    axis = MARGIN + half
+
+    panel_lines, _ = build_panel(panel_x, axis - panel_span / 2 + LINE_MID * PANEL_FONT)
+    art_y0 = axis - art_span / 2 + LINE_MID * art_font
 
     width = int(panel_x + PANEL_COLS * PANEL_FONT * ADVANCE + MARGIN)
-    height = int(MARGIN + 15 + max(len(art) * art_line, panel_rows * PANEL_LINE) + MARGIN)
+    height = round(2 * axis)
 
     art_tspans = "\n".join(
-        f'<tspan x="{MARGIN}" y="{MARGIN + 12 + i * art_line:g}">{esc(line)}</tspan>'
+        f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
         for i, line in enumerate(art)
     )
 
