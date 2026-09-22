@@ -11,10 +11,11 @@ arcade score as Pac-Man eats each day.
 
 Design rules:
 
-- Colours are imported from build_card.THEMES, never declared here. The level
-  ramp is a blend between the card's own background and foreground, so the
-  calendar is a greyscale version of GitHub's, drawn in the card's palette.
-  Pac-Man is the card's accent. Change the card and the board follows.
+- Colours are imported from build_card.THEMES. The level ramp is a blend
+  between the card's own background and foreground, so the calendar is a
+  greyscale version of GitHub's, drawn in the card's palette. Pac-Man is the
+  card's accent. Change the card and the board follows. The one exception is
+  CLAUDE_CORAL, which belongs to the character rather than the card.
 - Every sprite is one <path> on a single pixel grid (U px per pixel), so
   neighbouring pixels never show anti-aliased seams.
 - Every long animation shares one duration and begins at 0, so the whole
@@ -55,10 +56,21 @@ LEVEL_MIX = (0.10, 0.30, 0.50, 0.72, 1.0)
 STEP = 0.075               # time to cross one day
 INTRO = 1.5                # full calendar, Pac-Man waiting, before he moves
 OUTRO = 1.8                # empty calendar and the final total, before the reset
-GHOST_DELAYS = (5, 8, 11)  # how many days behind Pac-Man each ghost trails
 EAT_AHEAD = 5              # px: a day vanishes as the mouth reaches it
 CHOMP = 0.24               # one open-half-shut-half mouth cycle
-SKIRT = 0.30               # one ghost skirt wiggle
+
+# The chasers: three Claudes, each trailing Pac-Man by some days and each with
+# its own trait on top of the walk. Stride lengths differ on purpose -- three
+# identical loops started together would march in perfect lock-step.
+CAST = (
+    # (days behind, trait, seconds per stride)
+    (5, "blink", 0.34),
+    (8, "wave", 0.30),
+    (11, "hop", 0.38),
+)
+TRAIL = tuple(lag for lag, _, _ in CAST)
+WAVE = 0.28                # one arms-down, arms-up cycle
+BLINK_EVERY = 2.4          # eyes shut for a beat once per this many seconds
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 WEEKDAYS = {1: "Mon", 3: "Wed", 5: "Fri"}
@@ -97,30 +109,107 @@ PAC_SHUT = """
 .#######.
 ..#####..
 """
-# Eyes are holes in the bitmap. Pupils that track the heading were tried and
-# dropped: at 9px wide a 2x2 eye with a 1px pupil reads as a stray "L".
-GHOST_BODY = """
-..#####..
-.#######.
-#########
-##..#..##
-##..#..##
-#########
-#########
-#########
+# The Claude Code mascot, drawn from the reference image supplied rather than
+# from the terminal logo ( ▐▛███▜▌ / ▝▜█████▛▘ / ▘▘ ▝▝ ). The silhouette is the
+# same, but the logo's eyes are the quadrant missing from ▛ and ▜ -- taller
+# than wide, so they read as vertical slits -- whereas the mascot has thin
+# horizontal eyes. Doubling the logo's rows on square pixels leaves room for
+# them. Proportions measured off the reference: eyes ~29% down the body, legs
+# ~13% of its width, a three-column gap between the inner legs.
+#
+# Split into layers so each animates on its own, without drawing every
+# combination of arms, legs and eyelids.
+CLAWD_BODY = """
+..############..
+..############..
+..#..######..#..
+..############..
+..############..
+..############..
+..############..
+..############..
+................
+................
 """
-GHOST_SKIRT_A = "#.##.##.#"
-GHOST_SKIRT_B = ".##.#.##."
+CLAWD_ARMS_DOWN = """
+................
+................
+................
+................
+##............##
+##............##
+................
+................
+................
+................
+"""
+CLAWD_ARMS_UP = """
+................
+................
+##............##
+##............##
+................
+................
+................
+................
+................
+................
+"""
+# Two strides: one pair of legs planted while the other is lifted a pixel.
+CLAWD_LEGS_A = """
+................
+................
+................
+................
+................
+................
+................
+................
+..##.##..##.##..
+..##........##..
+"""
+CLAWD_LEGS_B = """
+................
+................
+................
+................
+................
+................
+................
+................
+..##.##..##.##..
+.....##..##.....
+"""
+CLAWD_LIDS = """
+................
+................
+...##......##...
+................
+................
+................
+................
+................
+................
+................
+"""
+CLAWD_PX = (1.5, 1.5)
+
+# The one colour declared here, because it belongs to the character and not to
+# the card -- as Pac-Man's yellow belonged to him in the arcade. In the card's
+# grey the Claudes read as generic Space Invaders; Claude's own coral is what
+# makes them Claude. On white that coral is 3.1:1, barely over the 3:1 floor
+# for graphics, so the light theme takes the darker terracotta at 4.2:1.
+CLAUDE_CORAL = {"dark": "#D97757", "light": "#C15F3C"}
 
 
 def bitmap(art: str) -> list[str]:
     return [r for r in art.strip("\n").split("\n") if r]
 
 
-def sprite_path(rows: list[str]) -> str:
+def sprite_path(rows: list[str], pw: float = U, ph: float = U) -> str:
     """Merge a bitmap into one path of horizontal pixel runs, centred on 0,0."""
     h, w = len(rows), max(len(r) for r in rows)
-    x0, y0 = -w * U / 2, -h * U / 2
+    x0, y0 = -w * pw / 2, -h * ph / 2
     d = []
     for y, row in enumerate(rows):
         x = 0
@@ -131,7 +220,7 @@ def sprite_path(rows: list[str]) -> str:
             run = x
             while run < len(row) and row[run] == "#":
                 run += 1
-            d.append(f"M{x0 + x * U:g} {y0 + y * U:g}h{(run - x) * U}v{U}h{-(run - x) * U}z")
+            d.append(f"M{x0 + x * pw:g} {y0 + y * ph:g}h{(run - x) * pw:g}v{ph:g}h{-(run - x) * pw:g}z")
             x = run
     return "".join(d)
 
@@ -155,15 +244,15 @@ class Timeline:
         for r in range(7):
             cols = (0, weeks - 1) if r % 2 == 0 else (weeks - 1, 0)
             pts += [(self.cx(cols[0]), self.cy(r)), (self.cx(cols[1]), self.cy(r))]
-        # run off the right edge far enough that the last ghost clears it too
-        pts.append((CANVAS_W + (max(GHOST_DELAYS) + 2) * PITCH, self.cy(6)))
+        # run off the right edge far enough that the last Claude clears it too
+        pts.append((CANVAS_W + (max(TRAIL) + 2) * PITCH, self.cy(6)))
         self.points = pts
 
         self.dist = [0.0]
         for a, b in zip(pts, pts[1:]):
             self.dist.append(self.dist[-1] + abs(b[0] - a[0]) + abs(b[1] - a[1]))
 
-        self.done = INTRO + (self.dist[-1] + max(GHOST_DELAYS) * PITCH) / self.speed
+        self.done = INTRO + (self.dist[-1] + max(TRAIL) * PITCH) / self.speed
         self.total = self.done + OUTRO
 
     def cx(self, col: int) -> float:
@@ -294,17 +383,35 @@ def build(theme: str, cal: dict) -> str:
                 f'{anim_discrete(tl, "visibility", ["visible", "hidden"], [0.0, t])}</use>'
             )
 
-    # Ghosts, then Pac-Man on top.
-    ghost_a = sprite_path(bitmap(GHOST_BODY) + [GHOST_SKIRT_A])
-    ghost_b = sprite_path(bitmap(GHOST_BODY) + [GHOST_SKIRT_B])
-    for lag in GHOST_DELAYS:
+    # The Claudes, then Pac-Man on top.
+    layer = {name: sprite_path(bitmap(art), *CLAWD_PX) for name, art in (
+        ("body", CLAWD_BODY), ("arms_down", CLAWD_ARMS_DOWN), ("arms_up", CLAWD_ARMS_UP),
+        ("legs_a", CLAWD_LEGS_A), ("legs_b", CLAWD_LEGS_B), ("lids", CLAWD_LIDS),
+    )}
+
+    def flip(a: str, b: str, dur: float) -> str:
+        """Two layers taking turns: a shows first, then b, on a dur-second cycle."""
+        return (f'<path d="{layer[a]}">{loop("opacity", ["1", "0"], dur)}</path>'
+                f'<path d="{layer[b]}" opacity="0">{loop("opacity", ["0", "1"], dur)}</path>')
+
+    for lag, trait, stride in CAST:
         keys, _ = tl.motion(lag)
-        sprites.append(
-            f'<g>{anim_translate(tl, keys)}<g fill="{c["fg"]}">'
-            f'<path d="{ghost_a}">{loop("opacity", ["1", "0"], SKIRT)}</path>'
-            f'<path d="{ghost_b}" opacity="0">{loop("opacity", ["0", "1"], SKIRT)}</path>'
-            f'</g></g>'
-        )
+        parts = [f'<path d="{layer["body"]}"/>', flip("legs_a", "legs_b", stride)]
+        parts.append(flip("arms_down", "arms_up", WAVE) if trait == "wave"
+                     else f'<path d="{layer["arms_down"]}"/>')
+        if trait == "blink":
+            parts.append(
+                f'<path d="{layer["lids"]}" opacity="0"><animate attributeName="opacity" '
+                f'values="0;1;0" keyTimes="0;0.93;0.98" dur="{BLINK_EVERY}s" '
+                f'calcMode="discrete" repeatCount="indefinite"/></path>'
+            )
+        body = "".join(parts)
+        if trait == "hop":
+            # one pixel row up on every other half-stride, in step with the legs
+            body = (f'<g><animateTransform attributeName="transform" type="translate" '
+                    f'values="0,0;0,{-CLAWD_PX[1]:g}" keyTimes="0;0.5" dur="{stride}s" '
+                    f'calcMode="discrete" repeatCount="indefinite"/>{body}</g>')
+        sprites.append(f'<g>{anim_translate(tl, keys)}<g fill="{CLAUDE_CORAL[theme]}">{body}</g></g>')
 
     keys, heads = tl.motion(0)
     rot = (f'<animateTransform attributeName="transform" type="rotate" '
