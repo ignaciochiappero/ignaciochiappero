@@ -59,9 +59,13 @@ jobs:
       - name: Rebuild the card
         run: python tools/build_card.py
 
-      # Other workflows in this repo also commit to main, so main can move
-      # while this job is fetching stats. The card is a deterministic build
-      # output, so replaying it on top of whatever landed is always safe.
+      - name: Rebuild the Pac-Man board
+        run: python tools/build_pacman.py
+
+      # This is the only workflow left, but main can still move while it
+      # fetches stats -- a manual push lands mid-run. The card and the board
+      # are deterministic build outputs, so replaying them on top of whatever
+      # landed is always safe.
       - name: Rebase onto any commits that landed meanwhile
         run: git pull --rebase --autostash origin main
 

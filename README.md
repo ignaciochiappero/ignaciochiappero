@@ -12,6 +12,6 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/pacman-contribution-graph-dark.svg">
-  <img alt="Pac-Man eating my contribution graph" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/output/pacman-contribution-graph.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/main/pacman_dark.svg">
+  <img alt="Pac-Man eating my contribution graph" src="https://raw.githubusercontent.com/ignaciochiappero/ignaciochiappero/main/pacman_light.svg">
 </picture>

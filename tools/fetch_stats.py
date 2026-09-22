@@ -1,4 +1,5 @@
-"""Fetch GitHub statistics for the profile card into cache/stats.json.
+"""Fetch GitHub statistics into cache/: stats.json for the card, calendar.json
+for the Pac-Man board.
 
 Split from tools/build_card.py on purpose: this half is the slow, network-bound,
 rate-limited part, so it caches aggressively and can fail without taking the
@@ -31,6 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / "cache"
 STATS_OUT = CACHE / "stats.json"
 LOC_CACHE = CACHE / "loc.json"
+CALENDAR_OUT = CACHE / "calendar.json"
 
 LOGIN = os.environ.get("GH_LOGIN", "ignaciochiappero")
 ENDPOINT = "https://api.github.com/graphql"
@@ -78,6 +80,28 @@ query($login:String!, $after:String) {
   }
 }
 """
+
+# The same last-year calendar GitHub draws on the profile. Anything the
+# profile hides from visitors -- private contributions, unless the owner opts
+# in -- this token cannot see either, so the board always matches the graph
+# rendered directly beneath it.
+CALENDAR_Q = """
+query($login:String!) {
+  user(login:$login) {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { date weekday contributionCount contributionLevel }
+        }
+      }
+    }
+  }
+}
+"""
+
+LEVELS = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2,
+          "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
 
 CONTRIB_Q = """
 query($login:String!) {
@@ -211,6 +235,22 @@ def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
     return added, deleted
 
 
+def fetch_calendar() -> dict:
+    """Weeks as seven weekday slots (0 = Sunday), None where a day doesn't exist yet."""
+    cal = query(CALENDAR_Q, {"login": LOGIN})["user"]["contributionsCollection"]["contributionCalendar"]
+    weeks = []
+    for week in cal["weeks"]:
+        slots: list[dict | None] = [None] * 7
+        for day in week["contributionDays"]:
+            slots[day["weekday"]] = {
+                "date": day["date"],
+                "count": day["contributionCount"],
+                "level": LEVELS[day["contributionLevel"]],
+            }
+        weeks.append(slots)
+    return {"total": cal["totalContributions"], "weeks": weeks}
+
+
 def main() -> None:
     if not TOKEN:
         raise SystemExit("GITHUB_TOKEN is not set")
@@ -239,6 +279,10 @@ def main() -> None:
     CACHE.mkdir(exist_ok=True)
     STATS_OUT.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     print(json.dumps(stats, indent=2))
+
+    calendar = fetch_calendar()
+    CALENDAR_OUT.write_text(json.dumps(calendar, indent=1), encoding="utf-8")
+    print(f"  calendar: {len(calendar['weeks'])} weeks, {calendar['total']} contributions")
 
 
 if __name__ == "__main__":
