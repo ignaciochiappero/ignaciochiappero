@@ -62,6 +62,11 @@ jobs:
       - name: Rebuild the Pac-Man board
         run: python tools/build_pacman.py
 
+      # No stats in these, but they take the card's palette: rebuilt here so a
+      # palette change in build_card.py reaches them too.
+      - name: Rebuild the link buttons
+        run: python tools/build_links.py
+
       # This is the only workflow left, but main can still move while it
       # fetches stats -- a manual push lands mid-run. The card and the board
       # are deterministic build outputs, so replaying them on top of whatever
