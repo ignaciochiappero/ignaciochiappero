@@ -99,6 +99,11 @@
     "deleted": 0,
     "oid": "302160864d039a00b8a20c85c73a15d9269ded41"
   },
+  "ignaciochiappero/commithats": {
+    "added": 14037,
+    "deleted": 841,
+    "oid": "2699a9bad0bcbfc108aa5ab7cb05ac0f9d4811e1"
+  },
   "ignaciochiappero/cookify": {
     "added": 9108,
     "deleted": 1085,
@@ -150,9 +155,9 @@
     "oid": "b68cf6716a1495946c5a12e83fa86e51c0d9a121"
   },
   "ignaciochiappero/ignaciochiappero": {
-    "added": 6974,
-    "deleted": 2769,
-    "oid": "c40408aa800b77cdff5227758fcf5bc93d1118c4"
+    "added": 7003,
+    "deleted": 2790,
+    "oid": "022285ed037e7d9ab130d49dba6ad879d799b4e2"
   },
   "ignaciochiappero/jaz-3d-store-v1": {
     "added": 656,

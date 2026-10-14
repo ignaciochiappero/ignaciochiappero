@@ -1,5 +1,5 @@
 {
- "total": 1157,
+ "total": 1166,
  "weeks": [
   [
    {
@@ -1938,10 +1938,14 @@
    },
    {
     "date": "2026-10-13",
+    "count": 9,
+    "level": 1
+   },
+   {
+    "date": "2026-10-14",
     "count": 0,
     "level": 0
    },
-   null,
    null,
    null,
    null
