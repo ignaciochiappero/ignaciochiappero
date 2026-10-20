@@ -124,6 +124,11 @@
     "deleted": 0,
     "oid": "f69320ef3b746a69c7bb6c227f60b71682a3302c"
   },
+  "ignaciochiappero/cronista": {
+    "added": 7100,
+    "deleted": 210,
+    "oid": "43dd64bdad3ede620773d2ea44d19739f709427c"
+  },
   "ignaciochiappero/crudblog-nextjs": {
     "added": 4139,
     "deleted": 879,
@@ -155,9 +160,9 @@
     "oid": "b68cf6716a1495946c5a12e83fa86e51c0d9a121"
   },
   "ignaciochiappero/ignaciochiappero": {
-    "added": 7151,
-    "deleted": 2941,
-    "oid": "cb56639f6f1a309036635c815a0a72bb7326e5cf"
+    "added": 7174,
+    "deleted": 2960,
+    "oid": "d16e407e70a306c4ca35143f475c6426cea03dd4"
   },
   "ignaciochiappero/jaz-3d-store-v1": {
     "added": 656,
