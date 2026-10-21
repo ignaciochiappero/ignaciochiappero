@@ -1,5 +1,5 @@
 {
- "total": 1186,
+ "total": 1265,
  "weeks": [
   [
    {
@@ -1822,23 +1822,23 @@
    },
    {
     "date": "2026-09-28",
-    "count": 6,
+    "count": 7,
     "level": 1
    },
    {
     "date": "2026-09-29",
-    "count": 9,
-    "level": 1
+    "count": 13,
+    "level": 2
    },
    {
     "date": "2026-09-30",
-    "count": 36,
-    "level": 3
+    "count": 51,
+    "level": 4
    },
    {
     "date": "2026-10-01",
-    "count": 20,
-    "level": 2
+    "count": 38,
+    "level": 3
    },
    {
     "date": "2026-10-02",
@@ -1864,13 +1864,13 @@
    },
    {
     "date": "2026-10-06",
-    "count": 21,
-    "level": 2
+    "count": 38,
+    "level": 3
    },
    {
     "date": "2026-10-07",
-    "count": 24,
-    "level": 2
+    "count": 33,
+    "level": 3
    },
    {
     "date": "2026-10-08",
@@ -1938,10 +1938,14 @@
    },
    {
     "date": "2026-10-20",
+    "count": 15,
+    "level": 2
+   },
+   {
+    "date": "2026-10-21",
     "count": 0,
     "level": 0
    },
-   null,
    null,
    null,
    null
